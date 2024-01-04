@@ -42,3 +42,7 @@ Adds an output to the console.
 - `def interact(delay=-1, input_entry=None, empty=True, **kwargs)`
 
 Prompts the player for an input, which is then returned. If `empty` is true, the string won't be returned as long as it is empty. This also takes the following parameters; `length`, `allow`, `exclude`, `prefix`, `suffix`, `multiline`, `copypaste` and `mask`; as described for the `input` screen language statement.
+
+- `def clear_history`
+
+Clears the console.
