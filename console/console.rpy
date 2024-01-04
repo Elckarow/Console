@@ -24,7 +24,6 @@ default console._typing_indicator = True
 init python in console:
     from renpy import store
     from store import _window_hide, pause, __, Dissolve, basestring, ui
-    import random
 
     HISTORY_LENGTH = 20
 
