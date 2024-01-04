@@ -136,7 +136,7 @@ init python in console:
         history.clear()
     
     def _get_time(entry):
-        return (len(renpy.filter_text_tags(renpy.substitute(entry.entry), allow=())) + 1) / entry.cps
+        return (len(renpy.filter_text_tags(renpy.substitute(entry.entry), allow=())) + 1) / float(entry.cps)
 
     def _entry_coroutine():
         global _current_entry, _typing_indicator
