@@ -52,7 +52,7 @@ init python in console:
     
     class _Entry(object):
         def __init__(self, entry, cps):
-            if not isinstance(entry, basestring): raise ValueError(f"expected str, got {entry.__class__.__name__}")
+            if not isinstance(entry, basestring): raise ValueError("expected str, got {}".format(entry.__class__.__name__))
             self.entry = entry
             self.cps = cps
     
