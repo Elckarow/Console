@@ -21,7 +21,7 @@ The default transition used when hiding the console.
 
 - `def show(transition=enter_transition, delay=0.4)`
 
-Shows the console. Pauses for `delay` seconds after (*delay=None* will wait for user input, while *delay=-1* won't pause at all).
+Shows the console. Pauses for `delay` seconds after (`delay=None` will wait for user input, while `delay=-1` won't pause at all).
 
 - `def hide(transition=enter_transition, delay=0.4)`
 
@@ -29,13 +29,13 @@ Hides the console.
 
 - `def input(text, delay=-1, cps=30, output_entry=None)`
 
-Adds an input `text` to the console, which is displayed with a cps of `cps` (*None* means instant display). If `output_entry` is not *None*, it is either a string, or *True* (which will take `text` for value). Will add the string as an output after the before function returns.
+Adds an input `text` to the console, which is displayed with a cps of `cps` (`None` means instant display). If `output_entry` is not `None`, it is either a string, or `True` (which will take `text` for value). Will add the string as an output before the function returns.
 
 ![image](https://github.com/Elckarow/Console/assets/101005497/635694c2-4283-4124-96e5-4ff490a98fbb)
 
 - `def output(text, delay=None, cps=None)`
 
-Adds an output to the console.
+Adds an output `text` to the console.
 
 ![image](https://github.com/Elckarow/Console/assets/101005497/66d4d507-0a5f-4ffa-965f-b3e711397ef4)
 
