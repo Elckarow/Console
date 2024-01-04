@@ -43,6 +43,10 @@ Adds an output to the console.
 
 Prompts the player for an input, which is then returned. If `empty` is true, the string won't be returned as long as it is empty. This also takes the following parameters; `length`, `allow`, `exclude`, `prefix`, `suffix`, `multiline`, `copypaste` and `mask`; as described for the `input` screen language statement.
 
-- `def clear_history`
+- `def clean_history()`
+
+Pops the console history until its length is less than `HISTORY_LENGTH`.
+
+- `def clear_history()`
 
 Clears the console.
