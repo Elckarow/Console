@@ -1,7 +1,7 @@
 # Console
 A Ren'Py tool that emulates a terminal / command line.
 
-![image](https://github.com/Elckarow/Console/assets/101005497/82ac96c8-842d-4d09-95e4-2da55885cbd7)
+![image](https://github.com/Elckarow/Console/assets/101005497/79244b80-af56-45ae-81c9-ed67e347fd0c)
 
 # Terms of Usage
 You must credit me as elckarow, via either a link to [the repo](https://github.com/Elckarow) or to my [itch page](https://elckarow.itch.io/).
