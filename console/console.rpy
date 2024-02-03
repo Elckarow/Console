@@ -203,7 +203,7 @@ init python in console:
 
                 rv = rv.strip().split("\n")
 
-            except subprocess.CalledProcessError
+            except subprocess.CalledProcessError:
                 rv = None
 
         cr.send(delay)
