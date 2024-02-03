@@ -24,6 +24,7 @@ default console._typing_indicator = True
 init python in console:
     from renpy import store
     from store import _window_hide, pause, __, Dissolve, basestring, ui
+    import subprocess
 
     HISTORY_LENGTH = 20
 
@@ -110,7 +111,7 @@ init python in console:
         output_entry = Output(text, cps)
         _entry(output_entry, delay)
     
-    def interact(delay=-1, input_entry=None, empty=True, **kwargs):
+    def interact(delay=-1, input_entry=None, empty=True, run=False, **kwargs):
         """
         Prompts the player for an input, which is then returned.
 
@@ -119,8 +120,10 @@ init python in console:
         as described for the `input` screen language statement.
 
         Also accepts `delay`, `empty` and `input_entry` (which is just like `output_entry` described in `console.input`, but with an input).
+        
+        If `run` is true, the inputed string will be passed to `subprocess.run`, and the returned value from that call will be returned, or `None` if an exception was raised.
         """
-        return _interact(Interact(**kwargs), delay, input_entry, empty)
+        return _interact(Interact(**kwargs), delay, input_entry, empty, run)
 
     def clean_history():
         """
@@ -171,7 +174,7 @@ init python in console:
 
         cr.send(delay)
     
-    def _interact(entry, delay=None, input_entry=None, empty=True):
+    def _interact(entry, delay=None, input_entry=None, empty=True, run=False):
         cr = _entry_coroutine()
         cr.send(None)
         cr.send(entry)
@@ -188,6 +191,20 @@ init python in console:
                 raise TypeError("input_entry expected None, str or True, got %r" % input_entry)
 
             input(input_entry, delay=-1, cps=None)
+        
+        if run:
+            try:
+                rv = subprocess.run(rv, shell=True, check=True, stdout=subprocess.PIPE).stdout
+
+                if renpy.windows:
+                    rv = rv.lower().decode("utf-8").replace("\r", "").replace(" ", "")
+                else:
+                    rv = rv.decode("utf-8")
+
+                rv = rv.strip().split("\n")
+
+            except subprocess.CalledProcessError
+                rv = None
 
         cr.send(delay)
         return rv
