@@ -201,10 +201,10 @@ init python in console:
                 else:
                     rv = rv.decode("utf-8")
 
-                rv = rv.strip().split("\n")
+                rv = rv[:-1]
 
             except subprocess.CalledProcessError:
-                rv = None
+                rv = _("Unknown command")
 
         cr.send(delay)
         return rv
