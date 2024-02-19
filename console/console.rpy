@@ -204,7 +204,7 @@ init python in console:
                 rv = rv[:-1]
 
             except subprocess.CalledProcessError:
-                rv = _("Unknown command")
+                rv = None
 
         cr.send(delay)
         return rv
