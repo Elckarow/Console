@@ -42,9 +42,9 @@ Adds an output `text` to the console.
 
 ![image](https://github.com/Elckarow/Console/assets/101005497/66d4d507-0a5f-4ffa-965f-b3e711397ef4)
 
-- `def interact(delay=-1, input_entry=None, empty=True, **kwargs)`
+- `def interact(delay=-1, input_entry=None, empty=True, run=False, **kwargs)`
 
-Prompts the player for an input, which is then returned. If `empty` is true, the string won't be returned as long as it is empty. This also takes the following parameters; `length`, `allow`, `exclude`, `prefix`, `suffix`, `multiline`, `copypaste` and `mask`; as described for the `input` screen language statement.
+Prompts the player for an input, which is then returned. If `empty` is true, the string won't be returned as long as it is empty. This also takes the following parameters; `length`, `allow`, `exclude`, `prefix`, `suffix`, `multiline`, `copypaste` and `mask`; as described for the `input` screen language statement. If `run` is true, the inputed string will be passed to `subprocess.run`, and the returned value from that call will be returned, or `None` if an exception was raised.
 
 - `def clean_history()`
 
