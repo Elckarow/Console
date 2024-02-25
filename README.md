@@ -6,7 +6,7 @@ A Ren'Py tool that emulates a terminal / command line.
 # Terms of Usage
 You must credit me as elckarow, via either a link to [the repo](https://github.com/Elckarow) or to my [itch page](https://elckarow.itch.io/).
 
-# Documantation
+# Documentation
 ***Every variables and functions described below are defined in the `console` namespace.***
 -
 
